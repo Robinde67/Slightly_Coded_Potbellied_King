@@ -1,0 +1,142 @@
+fileFormatVersion: 2
+guid: 0b0d67f9309b95b4792163b1d2c08178
+ModelImporter:
+  serializedVersion: 15
+  fileIDToRecycleName:
+    100000: Back_Root
+    100002: Body_controller
+    100004: Chest
+    100006: Crown
+    100008: crown
+    100010: Head
+    100012: Head_Controller
+    100014: Ik_Body
+    100016: Ik_Head
+    100018: Ik_left_arm
+    100020: Ik_right_arm
+    100022: King
+    100024: King2
+    100026: KingSmoothProxyGroup
+    100028: Left_arm_controller
+    100030: Left_Arm_Root
+    100032: Left_C
+    100034: Left_Elbow
+    100036: Left_Hand
+    100038: Left_Shoulder
+    100040: Lower_back
+    100042: Neck
+    100044: pCylinder3
+    100046: pCylinder4
+    100048: pelvis
+    100050: Right_arm_controller
+    100052: Right_Arm_Root
+    100054: Right_C
+    100056: Right_Elbow
+    100058: Right_Hand
+    100060: Right_Shoulder
+    100062: //RootNode
+    100064: Throne1
+    400000: Back_Root
+    400002: Body_controller
+    400004: Chest
+    400006: Crown
+    400008: crown
+    400010: Head
+    400012: Head_Controller
+    400014: Ik_Body
+    400016: Ik_Head
+    400018: Ik_left_arm
+    400020: Ik_right_arm
+    400022: King
+    400024: King2
+    400026: KingSmoothProxyGroup
+    400028: Left_arm_controller
+    400030: Left_Arm_Root
+    400032: Left_C
+    400034: Left_Elbow
+    400036: Left_Hand
+    400038: Left_Shoulder
+    400040: Lower_back
+    400042: Neck
+    400044: pCylinder3
+    400046: pCylinder4
+    400048: pelvis
+    400050: Right_arm_controller
+    400052: Right_Arm_Root
+    400054: Right_C
+    400056: Right_Elbow
+    400058: Right_Hand
+    400060: Right_Shoulder
+    400062: //RootNode
+    400064: Throne1
+    2300000: crown
+    2300002: King
+    2300004: pCylinder3
+    2300006: pCylinder4
+    2300008: Throne1
+    3300000: crown
+    3300002: King
+    3300004: pCylinder3
+    3300006: pCylinder4
+    3300008: Throne1
+    4300000: crown
+    4300002: King2
+    4300004: King
+    4300006: Throne1
+    4300008: pCylinder4
+    4300010: pCylinder3
+    7400000: Take 001
+    9500000: //RootNode
+    13700000: King2
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: .00999999978
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  userData: 
