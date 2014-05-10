@@ -145,8 +145,12 @@ public class PlayerControl : MonoBehaviour {
 	}
 
 	public void PlaySound(){
-		//int l_iR = Random.Range(0, 3);
-		audio.clip = m_xSound[0];
+		int l_iR = UnityEngine.Random.Range(0, 3);
+		if(l_iR ==3)
+		{
+			l_iR = 0;
+		}
+		audio.clip = m_xSound[l_iR];
 		audio.Play ();
 	}
 }

@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class FoodThrown : MonoBehaviour {
@@ -19,6 +19,8 @@ public class FoodThrown : MonoBehaviour {
 
 	public AudioClip m_xSound;
 
+	private AudioSource m_xSource;
+
 	public Sprite[] m_xaSprites;
 
 	public PlayerControl m_xPlayer;
@@ -27,6 +29,8 @@ public class FoodThrown : MonoBehaviour {
 	
 	void Start (){
 		//SaveTextureToFile( m_xTexture, "picture.png");
+		m_xMain = GameObject.FindGameObjectWithTag("Main").GetComponent<Main>();
+		m_xPlayer = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerControl>();
 	}
 
 	void Update (){
@@ -41,11 +45,18 @@ public class FoodThrown : MonoBehaviour {
 
 	public void Throw(){
 		SpriteRenderer l_xRend = this.gameObject.GetComponent<SpriteRenderer>();
-		
 		l_xRend.sprite = m_xaSprites [m_iFoodnum];
 
-		audio.clip = m_xSound;
-		audio.Play ();
+		if(m_xSource == null)
+		{
+			m_xSource = gameObject.AddComponent<AudioSource>();
+			m_xSource.clip = m_xSound;
+		}
+
+		if(!m_xSource.isPlaying)
+		{
+			m_xSource.Play ();
+		}
 		
 		m_vMovement = m_vSpd;
 		rigidbody.velocity = m_vMovement;

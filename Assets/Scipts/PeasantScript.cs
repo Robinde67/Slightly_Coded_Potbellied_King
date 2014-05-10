@@ -17,7 +17,7 @@ public class PeasantScript : MonoBehaviour {
 
 	public bool m_bLWave;
 
-	public FoodThrown m_xFood;
+	//public FoodThrown m_xFood;
 
 	public PlayerControl m_xKing;
 
@@ -45,15 +45,15 @@ public class PeasantScript : MonoBehaviour {
 	void FixedUpdate(){
 		if ((m_bInDist && m_xKing.m_bRhandWave && m_bRWave) || (m_bInDist && m_xKing.m_bLhandWave && m_bLWave) || (m_bInDist && !m_bLWave && !m_bRWave)) {
 			for (int i = 0; i < m_iFoodAmount; i++){
-				FoodThrown l_xFood;
+				GameObject l_xFood;
 
-				l_xFood = Instantiate (m_xFood, this.transform.position, this.transform.rotation) as FoodThrown;
-				l_xFood.m_iFoodnum = Random.Range(0, 3);
-				l_xFood.m_bThrown = true;
-				l_xFood.m_vSpd.x = Random.Range (-m_iRange, m_iRange) + m_iRangeAddOn;
+				l_xFood = Instantiate (Resources.Load<GameObject>("Prefabs/Food0"), this.transform.position, this.transform.rotation) as GameObject;
+				l_xFood.GetComponent<FoodThrown>().m_iFoodnum = Random.Range(0, 3);
+				l_xFood.GetComponent<FoodThrown>().m_bThrown = true;
+				l_xFood.GetComponent<FoodThrown>().m_vSpd.x = Random.Range (-m_iRange, m_iRange) + m_iRangeAddOn;
 				l_xFood.rigidbody.useGravity = true;
 
-				l_xFood.Throw();
+				l_xFood.GetComponent<FoodThrown>().Throw();
 				
 				m_iFoodAmount--;
 			}

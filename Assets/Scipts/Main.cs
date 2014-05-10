@@ -25,6 +25,7 @@ public class Main : MonoBehaviour {
 
 	void Start(){
 		m_iScore = 0;
+		gameObject.GetComponent<AudioSource>().Play();
 	}
 
 	void Update(){
