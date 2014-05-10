@@ -11,3 +11,6 @@
 /*.userprefs
 /*.pidb
 /*.booproj
+
+# Ignore desktop.ini
+/*desktop.ini
