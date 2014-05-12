@@ -3,29 +3,32 @@ using System.Collections;
 
 public class PeasantScript : MonoBehaviour {
 
-	public int m_iRange;
+	public float m_fRange;
 
-	public int m_iRangeAddOn;
+	public float m_fRangeAddOn;
 
 	public int m_iDist;
-
-	public int m_iFoodAmount;
-
-	public int m_iFoodType;
 
 	public bool m_bRWave;
 
 	public bool m_bLWave;
 
-	//public FoodThrown m_xFood;
+	public FoodThrown[] m_xaFood;
 
 	public PlayerControl m_xKing;
 
 	public bool m_bInDist;
 
+	public bool m_bThrown;
+
 	void Start (){
-		m_iFoodAmount = 2;
-		m_iDist = 60;
+
+		m_bThrown = false;
+
+		if (m_bLWave && m_bRWave) {
+			m_bLWave = false;
+			m_bRWave = false;
+		}
 	}
 
 	void Update (){
@@ -35,27 +38,21 @@ public class PeasantScript : MonoBehaviour {
 		else {
 			m_bInDist = false;
 		}
-
-		if (m_bLWave && m_bRWave) {
-			m_bLWave = false;
-			m_bRWave = false;
-		}
 	}
 
 	void FixedUpdate(){
 		if ((m_bInDist && m_xKing.m_bRhandWave && m_bRWave) || (m_bInDist && m_xKing.m_bLhandWave && m_bLWave) || (m_bInDist && !m_bLWave && !m_bRWave)) {
-			for (int i = 0; i < m_iFoodAmount; i++){
-				GameObject l_xFood;
+			if (!m_bThrown){
+				for (int i = 0; i < m_xaFood.Length; i++){
+					FoodThrown l_xFood;
 
-				l_xFood = Instantiate (Resources.Load<GameObject>("Prefabs/Food0"), this.transform.position, this.transform.rotation) as GameObject;
-				l_xFood.GetComponent<FoodThrown>().m_iFoodnum = Random.Range(0, 3);
-				l_xFood.GetComponent<FoodThrown>().m_bThrown = true;
-				l_xFood.GetComponent<FoodThrown>().m_vSpd.x = Random.Range (-m_iRange, m_iRange) + m_iRangeAddOn;
-				l_xFood.rigidbody.useGravity = true;
+					//l_xFood = Instantiate (Resources.Load<GameObject>("Assets/Prefabs/Food" + m_iaFood + ".prefab"), this.transform.position, this.transform.rotation) as GameObject;
+					l_xFood = Instantiate (m_xaFood[i], this.transform.position, this.transform.rotation) as FoodThrown;
 
-				l_xFood.GetComponent<FoodThrown>().Throw();
-				
-				m_iFoodAmount--;
+					l_xFood.Throw(Random.Range (-m_fRange, m_fRange) + m_fRangeAddOn);
+				}
+
+				m_bThrown = true;
 			}
 		}
 	}
