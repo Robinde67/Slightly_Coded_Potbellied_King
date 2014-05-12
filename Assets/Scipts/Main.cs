@@ -5,15 +5,13 @@ using System.IO;
 
 [RequireComponent(typeof(Renderer))]
 
-public class Main : MonoBehaviour {
-
-	public int m_iWeight;
-	public int m_iMinWeight;
-	public int m_iMaxWeight;
-
+public class Main : MonoBehaviour
+{
 	public int m_iScore;
-
 	public int m_iCombo;
+
+	public bool m_bLeftIndicator;
+	public bool m_bRightIndicator;
 
 	public GameObject m_gGoal;
 
@@ -41,13 +39,7 @@ public class Main : MonoBehaviour {
 	}
 
 	void FixedUpdate(){
-		if (m_iMinWeight <= 0){
-			m_iMinWeight = 1;
-		}
 
-		if (m_iMaxWeight < m_iMinWeight) {
-			m_iMaxWeight = m_iMinWeight;
-		}
 	}
 
 	void TakePicture(){

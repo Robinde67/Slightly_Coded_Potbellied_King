@@ -42,9 +42,6 @@ public class PlayerControl : MonoBehaviour {
 	private Vector3 m_vZero;
 	
 	void Start () {
-		m_iWeight = m_xMain.m_iWeight;
-		m_iMinWeight = m_xMain.m_iMinWeight;
-		m_iMaxWeight = m_xMain.m_iMaxWeight;
 		m_iScore = m_xMain.m_iScore;
 	}
 
