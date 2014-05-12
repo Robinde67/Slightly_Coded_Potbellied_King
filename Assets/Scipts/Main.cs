@@ -5,8 +5,7 @@ using System.IO;
 
 [RequireComponent(typeof(Renderer))]
 
-public class Main : MonoBehaviour
-{
+public class Main : MonoBehaviour {
 	public int m_iScore;
 	public int m_iCombo;
 
@@ -61,5 +60,17 @@ public class Main : MonoBehaviour
 		}
 
 		return false;
+	}
+
+	public int ComboUp(){
+		int l_iCurrentCombo = m_iCombo;
+
+		m_iCombo++;
+
+		return l_iCurrentCombo;
+	}
+
+	public void ComboReset(){
+		m_iCombo = 0;
 	}
 }

@@ -46,6 +46,7 @@ public class FoodThrown : MonoBehaviour {
 	}
 
 	public void Throw(float p_fRangeSpd){
+		print ("Food Thrown");
 		SpriteRenderer l_xRend = this.gameObject.GetComponent<SpriteRenderer>();
 		l_xRend.sprite = GetFood ();
 
@@ -74,13 +75,9 @@ public class FoodThrown : MonoBehaviour {
 
 	void OnTriggerEnter(Collider p_xOther){
 		if (p_xOther.gameObject.tag == "Player") {
-<<<<<<< HEAD
-			m_xMain.m_iScore += m_iaValue[m_iFoodnum];
-
-=======
+			//m_xMain.m_iScore += m_iaValue[m_iFoodnum];
 
 			OnCatch();
->>>>>>> d30b73edfb2cdfcd9a2cfeff42ca8efb096fd120
 
 			m_xPlayer.PlaySound();
 
@@ -93,6 +90,10 @@ public class FoodThrown : MonoBehaviour {
 		
 		if (l_iR >= m_xaFood.Length) {
 			l_iR = 0;
+		}
+
+		if (m_xaFood.Length == 0) {
+			return null;
 		}
 		
 		return m_xaFood[l_iR];
