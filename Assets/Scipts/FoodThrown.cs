@@ -65,12 +65,8 @@ public class FoodThrown : MonoBehaviour {
 
 	void OnTriggerEnter(Collider p_xOther){
 		if (p_xOther.gameObject.tag == "Player") {
-			m_xMain.m_iWeight += m_iaCalories[m_iFoodnum];
 			m_xMain.m_iScore += m_iaValue[m_iFoodnum];
 
-			if (m_xMain.m_iWeight > m_xMain.m_iMaxWeight){
-
-			}
 
 			m_xPlayer.PlaySound();
 
